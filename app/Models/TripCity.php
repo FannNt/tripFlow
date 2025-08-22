@@ -9,6 +9,7 @@ class TripCity extends Model
 {
     /** @use HasFactory<\Database\Factories\TripCityFactory> */
     use HasFactory;
+    protected $guarded = [];
 
     public function city()
     {

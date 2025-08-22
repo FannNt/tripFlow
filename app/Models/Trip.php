@@ -10,7 +10,8 @@ class Trip extends Model
     /** @use HasFactory<\Database\Factories\TripFactory> */
     use HasFactory;
 
-    // Trip has many Cities through the trip_cities pivot table
+    protected $guarded = [];
+
     public function cities()
     {
         return $this->belongsToMany(City::class, 'trip_cities', 'trip_id', 'city_id')
