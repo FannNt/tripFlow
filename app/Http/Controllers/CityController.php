@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use AllowDynamicProperties;
 use App\Http\Requests\StoreCityRequest;
 use App\Http\Requests\UpdateCityRequest;
 use App\Models\City;
+use App\Services\City\CityService;
 
 class CityController extends Controller
 {
+    protected CityService $cityService;
+    public function __construct(CityService $cityService)
+    {
+        $this->cityService = $cityService;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -21,7 +29,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
